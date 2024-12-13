@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tmovie-app
+  labels:
+    app: tmovie-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tmovie-app
+  template:
+    metadata:
+      labels:
+        app: tmovie-app
+    spec:
+      containers:
+      - name: tmovie-app
+        image: xthanh12/tmovie:latest
+        ports:
+        - containerPort: 3000
